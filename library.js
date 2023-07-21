@@ -39,6 +39,10 @@ function CreateBookNode(book) {
     const toggle_original = document.querySelector(".toggle-div");
     const toggle_new = toggle_original.cloneNode(true);
     const new_toggle = toggle_new.querySelector(".toggle");
+    if (new_toggle.classList.contains("fa-toggle-on")) {
+        new_toggle.classList.remove("fa-toggle-on");
+        new_toggle.classList.add("fa-toggle-off");
+    }
     new_toggle.addEventListener("click", Toggle);
     
     //Append to book_div
