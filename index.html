@@ -6,6 +6,7 @@
     <title>Library</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script src="library.js" defer></script>
+    <script src="https://kit.fontawesome.com/dcc8bd1f73.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -18,9 +19,30 @@
             </div>
         </div>
         <div class="main-container">
-            <button type="button">Add New Book</button>
+            <div class="form-container">
+                <form method="post">
+                    <div class="header-form">
+                        <h2>Add Book To Library List</h2>
+                    </div>
+                    <div class="form-element"><label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Hunger Games" required>
+                    </div>
+                    <div class="form-element"><label for="author">Author:</label>
+                    <input type="text" id="author" placeholder="Suzanne Collins" required>
+                    </div>
+                    <div class="form-element"><label for="pages">Pages:</label>
+                        <input type="text" id="pages" placeholder="384">
+                    </div>
+                    <button type="submit" class="submit-form">Submit</button>
+                </form>
+            </div>
+            <span class="overlay"></span>
+            <button type="button" class="add-book">Add New Book</button>
             <div class="books-main">
-                <div class="article">
+                <div class="article" data-index="0">
+                    <div class="remove">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                     <div class="img-container">
                         <img src="imgs/How-to-kill-a-mockingbird.jpeg" alt="MockingBird">
                     </div>
@@ -28,8 +50,15 @@
                         <h1>How To Kill A MockingBird</h1>
                         <p>Harper Lee, 281 pages</p>
                     </div>
+                    <div class="toggle-div">
+                        <p>Read</p>
+                        <i class="fa-solid fa-toggle-off toggle"></i>
+                    </div>
                 </div>
-                <div class="article">
+                <div class="article" data-index="1">
+                    <div class="remove">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                     <div class="img-container">
                         <img src="imgs/Percy-Jackson-Olympians.gif" alt="Percy Jackson">
                     </div>
@@ -37,14 +66,25 @@
                         <h1>Percy Jackson and the Olympians</h1>
                         <p>Rick Riordan, 416 pages</p>
                     </div>
+                    <div class="toggle-div">
+                        <p>Read</p>
+                        <i class="fa-solid fa-toggle-off toggle"></i>
+                    </div>
                 </div>
-                <div class="article">
+                <div class="article" data-index="2">
+                    <div class="remove-div">
+                        <i class="fa-solid fa-xmark remove"></i>
+                    </div>
                     <div class="img-container">
                         <img src="imgs/Cracking-the-coding0interview.jpg" alt="Coding-Interview">
                     </div>
                     <div class="book-description">
                         <h1>Cracking the Coding Interview</h1>
                         <p>Gayle Laakmann McDowell, 700 pages</p>
+                    </div>
+                    <div class="toggle-div">
+                        <p>Read</p>
+                        <i class="fa-solid fa-toggle-off toggle"></i>
                     </div>
                 </div>
             </div>

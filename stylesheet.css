@@ -44,23 +44,92 @@
 }
 
 .main-container {
+    position: relative;
     background: #678a9d;
     display: flex;
     flex-direction: column;
 }
 
-button {
+.main-container.active .form-container,
+.main-container.active .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 475px;
+    width: 500px;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.form-element {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+
+.header-form {
+    width: 100%;
+    background: #676F9D;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-element input {
+    width: 240px;
+    padding: 10px;
+}
+
+button[type="submit"] {
+    background-color: #679D95;
+    font-family: inherit;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline:none;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-container.active .add-book {
+    visibility: hidden;
+}
+
+button.add-book {
     align-self: center;
     margin-top: 30px;
     padding: 20px;
     border-radius: 30px;
     font-weight: bold;
     font-family: inherit;
+    outline: none;
     border: transparent;
     transition: all 0.4s;
 }
 
-button:hover {
+button.add-book:hover {
     transform: scale(1.3);
 }
 
@@ -71,27 +140,36 @@ button:hover {
     gap: 15px;
     background: #678a9d;
     padding: 30px;
-    justify-items: ce;
 }
 
 .article {
+    position: relative;
     height: 350px; 
     width: 300px; 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     color: black;
-    font-size: 12px;
+    font-size: 13px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    text-align: center;
+}
+
+.remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
 }
 
 
 .img-container {
-    width: 175px;
-    height: 175px;
+    width: 125px;
+    height: 125px;
 }
 
 .img-container img {
@@ -103,4 +181,22 @@ button:hover {
 .book-description {
     height: 100px;
 }
+
+.toggle-div {
+    width: 120px;
+    height: 50px;
+    font-size: 37px;
+    color: black;
+    display: flex;
+    gap: 10px;
+}
+
+.toggle {
+    transition: all 0.5s;
+}
+
+.toggle-div p {
+    font-size: smaller;
+}
+
 
