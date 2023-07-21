@@ -22,6 +22,11 @@ function CreateBookNode(book) {
     let article = document.createElement("div");
     
     let article_div = document.createElement("div");
+
+    //Remove div
+    const remove = document.querySelector(".remove-div");
+    const remove_new = remove.cloneNode(true);
+    remove_new.addEventListener("click", Remove);
     
     //Title of Book
     const book_title = document.createElement("h1");
@@ -46,12 +51,12 @@ function CreateBookNode(book) {
     new_toggle.addEventListener("click", Toggle);
     
     //Append to book_div
+    article_div.appendChild(remove_new);
     article_div.appendChild(book_title);
     article_div.appendChild(author);
-    article.appendChild(article_div);
-    article.appendChild(toggle_new);
-    article.classList.add("article")
-    return article;
+    article_div.appendChild(toggle_new);
+    article_div.classList.add("article");
+    return article_div;
 }
 
 //If wanting to load books at the beginning//
@@ -127,17 +132,13 @@ AddReadListener();
 
 //Remove
 
-document.querySelectorAll(".remove").forEach((item) => {
-    item.addEventListener("click", (event) => {
-        console.log(event.target);
-        const article = item.parentElement;
-        console.log(article);
-        while (article.firstChild) {
-            article.removeChild(article.firstChild);
-        }
-        const book_container = document.querySelector(".books-main");
-        book_container.removeChild(article);
-    })
+document.querySelectorAll(".remove-div").forEach((item) => {
+    item.addEventListener("click", Remove);
 });
+
+function Remove(event) {
+    const article = event.target.parentElement.parentElement;
+    article.remove();
+}
 
 
