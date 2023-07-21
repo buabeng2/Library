@@ -133,6 +133,10 @@ button.add-book:hover {
     transform: scale(1.3);
 }
 
+button, i {
+    cursor: pointer;
+}
+
 .books-main {
     display: grid;
     grid-template-columns: repeat(auto-fit, 320px);

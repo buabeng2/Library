@@ -17,6 +17,7 @@ function addBookToLibrary(new_book) {
   book_container.appendChild(article_div_add);
 }
 
+//Clean up Later
 function CreateBookNode(book) {
 
     let article = document.createElement("div");
